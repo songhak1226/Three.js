@@ -39,7 +39,7 @@ class App {
             0.1,
             100
         );
-        camera.position.z = 7;
+        camera.position.z = 3;
         this._camera = camera;
     }
 
@@ -52,52 +52,34 @@ class App {
     }
 
     _setupModel() {
-        // const vertices = [];
-        // for(let i = 0; i < 10000; i++){
-        //     const x = THREE.MathUtils.randFloatSpread(5);
-        //     const y = THREE.MathUtils.randFloatSpread(5);
-        //     const z = THREE.MathUtils.randFloatSpread(5);
+        // MeshStandardMaterial 예제
+        // const material = new THREE.MeshStandardMaterial({
+        //     color: 0xff0000,
+        //     emissive: 0x000000,
+        //     roughness: 0.2,
+        //     metalness: 0/9,
+        //     wireframe: false,
+        //     flatShading: false
+        // })
 
-        //     vertices.push(x, y, z);
-        // }
+        const material = new THREE.MeshPhysicalMaterial({
+            color: 0xff0000,
+            emissive: 0x000000,
+            roughness: 1,
+            metalness: 0,
+            clearcoat: 1,
+            clearcoatRoughness: 0,
+            wireframe: false,
+            flatShading: false
+        })
 
-        // const geometry = new THREE.BufferGeometry();
-        // geometry.setAttribute(
-        //     "position",
-        //     new THREE.Float32BufferAttribute(vertices, 3)
-        // );
-        
-        // const sprite = new THREE.TextureLoader().load(
-        //     "../examples/textures/sprites/disc.png"
-        // );
+        const box = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
+        box.position.set(-1, 0, 0);
+        this._scene.add(box);
 
-        // const material = new THREE.PointsMaterial({
-        //     map: sprite,
-        //     alphaTest: 0.5,
-        //     color: 0x00ffff,
-        //     size: 0.05,
-        //     sizeAttenuation: true
-        // });
-
-        // const points = new THREE.Points(geometry, material);
-        // this._scene.add(points);
-
-        const vertices = [
-            -1, 1, 0,
-            -1, -1, 0,
-            1, 1, 0,
-            1, -1, 0
-        ];
-
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
-
-        const material = new THREE.LineBasicMaterial({
-            color: 0xff0000
-        });
-
-        const line = new THREE.Line(geometry, material);
-        this._scene.add(line);
+        const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.7, 32, 32), material);
+        sphere.position.set(1, 0, 0);
+        this._scene.add(sphere);
     }
 
     resize() {

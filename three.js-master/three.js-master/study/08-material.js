@@ -39,7 +39,7 @@ class App {
             0.1,
             100
         );
-        camera.position.z = 7;
+        camera.position.z = 3;
         this._camera = camera;
     }
 
@@ -52,52 +52,44 @@ class App {
     }
 
     _setupModel() {
-        // const vertices = [];
-        // for(let i = 0; i < 10000; i++){
-        //     const x = THREE.MathUtils.randFloatSpread(5);
-        //     const y = THREE.MathUtils.randFloatSpread(5);
-        //     const z = THREE.MathUtils.randFloatSpread(5);
-
-        //     vertices.push(x, y, z);
-        // }
-
-        // const geometry = new THREE.BufferGeometry();
-        // geometry.setAttribute(
-        //     "position",
-        //     new THREE.Float32BufferAttribute(vertices, 3)
-        // );
-        
-        // const sprite = new THREE.TextureLoader().load(
-        //     "../examples/textures/sprites/disc.png"
-        // );
-
-        // const material = new THREE.PointsMaterial({
-        //     map: sprite,
-        //     alphaTest: 0.5,
-        //     color: 0x00ffff,
-        //     size: 0.05,
-        //     sizeAttenuation: true
+        // MeshBasicMaterial 예제
+        // const material = new THREE.MeshBasicMaterial({
+        //     visible: true,
+        //     transparent: true,
+        //     opacity: 0.5,
+        //     depthTest: true,
+        //     deptWrite: true,
+        //     side: THREE.DoubleSide,
+        //     color: 0xffff00,
+        //     wireframe: false
         // });
 
-        // const points = new THREE.Points(geometry, material);
-        // this._scene.add(points);
+        // MeshLambertMaterial 예제
+        // const material = new THREE.MeshLambertMaterial({
+        //     transparent: true,
+        //     opacity: 0.6,
+        //     side: THREE.DoubleSide,
+        //     color: 0xff00ff,
+        //     emissive: 0x555500,
+        //     wireframe: false
+        // })
 
-        const vertices = [
-            -1, 1, 0,
-            -1, -1, 0,
-            1, 1, 0,
-            1, -1, 0
-        ];
+        const material = new THREE.MeshPhongMaterial({
+            color: 0xff0000,
+            emissive: 0x000000,
+            specular: 0xffff00,
+            shininess: 10,
+            flatShading: true,
+            wireframe: false
+        })
 
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
+        const box = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
+        box.position.set(-1, 0, 0);
+        this._scene.add(box);
 
-        const material = new THREE.LineBasicMaterial({
-            color: 0xff0000
-        });
-
-        const line = new THREE.Line(geometry, material);
-        this._scene.add(line);
+        const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.7, 32, 32), material);
+        sphere.position.set(1, 0, 0);
+        this._scene.add(sphere);
     }
 
     resize() {
