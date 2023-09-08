@@ -57,7 +57,7 @@ class App {
         //     color: 0xff0000,
         //     emissive: 0x000000,
         //     roughness: 0.2,
-        //     metalness: 0/9,
+        //     metalness: 0.9,
         //     wireframe: false,
         //     flatShading: false
         // })

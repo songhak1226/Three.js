@@ -1,0 +1,11 @@
+Model Information:
+* title:	FERRARI ROMA SPIDER
+* source:	https://sketchfab.com/3d-models/ferrari-roma-spider-853d4ae9edc94e4eacc401c1561e18a7
+* author:	BALCAT (https://sketchfab.com/BALCAT)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "FERRARI ROMA SPIDER" (https://sketchfab.com/3d-models/ferrari-roma-spider-853d4ae9edc94e4eacc401c1561e18a7) by BALCAT (https://sketchfab.com/BALCAT) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
