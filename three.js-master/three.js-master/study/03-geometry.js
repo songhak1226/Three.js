@@ -56,7 +56,7 @@ class App {
         // const geometry = new THREE.CylinderGeometry(0.5, 0.5, 1, 10, 8, true, 0, Math.PI);
         // const geometry = new THREE.SphereGeometry(0.7, 32, 12, 0, Math.PI, 0, Math.PI/2);
         // const geometry = new THREE.RingGeometry(0.2, 1, 6, 2, 0, Math.PI);
-        // const geometry = new THREE.PlaneGeometry(1.5, 1.3, 2, 2);
+        // const geometry = new THREE.PlaneGeometry(1.5, 1.3, 2, 2); // 너비에 대한 길이, 높이에 대한 길이, 너비 방향에 대한 분할 수, 높이 방향에 대한 분할 수 
         // const geometry = new THREE.TorusGeometry(1, 0.5, 8, 32, Math.PI);
         const geometry = new THREE.TorusKnotGeometry(0.6,0.2,64, 32)
         const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151 });
